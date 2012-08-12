@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--This file was created with the Microsoft Visual Programming Language.-->
+<Manifest xmlns:colorsensor="http://schemas.microsoft.com/robotics/2010/03/lego/nxt/colorsensor.html" 
+          xmlns:drive="http://schemas.microsoft.com/robotics/2007/07/lego/nxt/drive.html" 
+          xmlns:this="urn:uuid:304b1578-bf40-4dfc-aa85-c83849035336" 
+          xmlns:dssp="http://schemas.microsoft.com/xw/2004/10/dssp.html" 
+          xmlns:xboxcontroller="http://schemas.tempuri.org/2012/04/xboxcontroller.html" 
+          xmlns:brick="http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html"
+          xmlns:battery="http://schemas.microsoft.com/robotics/2007/07/lego/nxt/battery.html"
+          xmlns="http://schemas.microsoft.com/xw/2004/10/manifest.html">
+  <CreateServiceList>
+    <ServiceRecordType>
+      <dssp:Contract>http://schemas.tempuri.org/2012/04/xboxcontroller.html</dssp:Contract>
+      <dssp:PartnerList>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>xboxcontroller:Brick</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTBrickv2</dssp:ServiceName>
+        </dssp:Partner>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/drive.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>xboxcontroller:Drive</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTDrivev2</dssp:ServiceName>
+        </dssp:Partner>
+
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2010/03/lego/nxt/colorsensor.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>xboxcontroller:RgbSensor</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTColorSensorv2</dssp:ServiceName>
+        </dssp:Partner>
+
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/battery.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>xboxcontroller:Battery</dssp:Name>
+          <dssp:ServiceName>this:NxtBattery</dssp:ServiceName>
+        </dssp:Partner>
+        
+      </dssp:PartnerList>
+      <Name>this:xboxcontroller</Name>
+    </ServiceRecordType>
+    <ServiceRecordType>
+      <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+      <dssp:PartnerList>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+          <dssp:Service>legonxtbrickv2.config.xml</dssp:Service>
+          <dssp:PartnerList />
+          <dssp:Name>dssp:StateService</dssp:Name>
+        </dssp:Partner>
+      </dssp:PartnerList>
+      <Name>this:LegoNXTBrickv2</Name>
+    </ServiceRecordType>
+    <ServiceRecordType>
+      <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/drive.html</dssp:Contract>
+      <dssp:PartnerList>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/drive.html</dssp:Contract>
+          <dssp:Service>legonxtdrivev2.config.xml</dssp:Service>
+          <dssp:PartnerList />
+          <dssp:Name>dssp:StateService</dssp:Name>
+        </dssp:Partner>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>drive:brick</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTBrickv2</dssp:ServiceName>
+        </dssp:Partner>
+      </dssp:PartnerList>
+      <Name>this:LegoNXTDrivev2</Name>
+    </ServiceRecordType>
+    <ServiceRecordType>
+      <dssp:Contract>http://schemas.microsoft.com/robotics/2010/03/lego/nxt/colorsensor.html</dssp:Contract>
+      <dssp:PartnerList>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2010/03/lego/nxt/colorsensor.html</dssp:Contract>
+          <dssp:Service>legonxtcolorsensorv2.config.xml</dssp:Service>
+          <dssp:PartnerList />
+          <dssp:Name>dssp:StateService</dssp:Name>
+        </dssp:Partner>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>colorsensor:brick</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTBrickv2</dssp:ServiceName>
+        </dssp:Partner>
+      </dssp:PartnerList>
+      <Name>this:LegoNXTColorSensorv2</Name>
+    </ServiceRecordType>
+    <ServiceRecordType>
+      <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/battery.html</dssp:Contract>
+      <dssp:PartnerList>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/battery.html</dssp:Contract>
+          <dssp:Service>nxtbattery.config.xml</dssp:Service>
+          <dssp:PartnerList />
+          <dssp:Name>dssp:StateService</dssp:Name>
+        </dssp:Partner>
+        <dssp:Partner>
+          <dssp:Contract>http://schemas.microsoft.com/robotics/2007/07/lego/nxt/brick.html</dssp:Contract>
+          <dssp:PartnerList />
+          <dssp:Name>battery:brick</dssp:Name>
+          <dssp:ServiceName>this:LegoNXTBrickv2</dssp:ServiceName>
+        </dssp:Partner>
+      </dssp:PartnerList>
+      <Name>this:NxtBattery</Name>
+    </ServiceRecordType>
+  </CreateServiceList>
+</Manifest>
